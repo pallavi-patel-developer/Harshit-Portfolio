@@ -127,6 +127,74 @@ const INITIAL_IMAGES = [
     left: "44%",
     rotation: "-6deg",
     zIndex: 15,
+  },
+  {
+    id: 6,
+    src: "/giphy.gif",
+    alt: "Faces & Stories — Portrait",
+    title: "Faces & Stories",
+    category: "Portrait Photography",
+    year: "2026",
+    location: "Prayagraj, Uttar Pradesh, India",
+    metadata: "Sony A7IV • 50mm f/1.2 GM",
+    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
+    aspect: "aspect-square",
+    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
+    top: "76%",
+    left: "44%",
+    rotation: "-6deg",
+    zIndex: 15,
+  },
+  {
+    id: 6,
+    src: "/giphy.gif",
+    alt: "Faces & Stories — Portrait",
+    title: "Faces & Stories",
+    category: "Portrait Photography",
+    year: "2026",
+    location: "Prayagraj, Uttar Pradesh, India",
+    metadata: "Sony A7IV • 50mm f/1.2 GM",
+    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
+    aspect: "aspect-square",
+    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
+    top: "76%",
+    left: "44%",
+    rotation: "-6deg",
+    zIndex: 15,
+  },
+  {
+    id: 6,
+    src: "/giphy.gif",
+    alt: "Faces & Stories — Portrait",
+    title: "Faces & Stories",
+    category: "Portrait Photography",
+    year: "2026",
+    location: "Prayagraj, Uttar Pradesh, India",
+    metadata: "Sony A7IV • 50mm f/1.2 GM",
+    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
+    aspect: "aspect-square",
+    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
+    top: "76%",
+    left: "44%",
+    rotation: "-6deg",
+    zIndex: 15,
+  },
+  {
+    id: 6,
+    src: "/giphy.gif",
+    alt: "Faces & Stories — Portrait",
+    title: "Faces & Stories",
+    category: "Portrait Photography",
+    year: "2026",
+    location: "Prayagraj, Uttar Pradesh, India",
+    metadata: "Sony A7IV • 50mm f/1.2 GM",
+    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
+    aspect: "aspect-square",
+    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
+    top: "76%",
+    left: "44%",
+    rotation: "-6deg",
+    zIndex: 15,
   }
 ];
 
@@ -389,123 +457,137 @@ export default function Home() {
         </div>
 
         {/* The Interactive Scattered Moodboard Canvas */}
-        <section 
-          id="canvas"
-          ref={canvasRef}
-          className="relative w-full min-h-[125vh] md:min-h-[145vh] lg:min-h-[165vh] bg-[#020617] border-y border-zinc-900/60 overflow-hidden select-none"
-          style={{
-            backgroundImage: "radial-gradient(#0f172a 1px, transparent 1px)",
-            backgroundSize: "24px 24px"
-          }}
-        >
-          {/* Subtle instructions watermark behind images */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
-            <span className="font-display font-extrabold text-[10vw] tracking-widest select-none uppercase">
-              HARSHIT
-            </span>
-          </div>
+     <section
+  id="canvas"
+  ref={canvasRef}
+  className="relative w-full min-h-[125vh] md:min-h-[145vh] lg:min-h-[165vh] bg-[#020617] border-y border-zinc-900/60 overflow-hidden select-none"
+  style={{
+    backgroundImage: "radial-gradient(#0f172a 1px, transparent 1px)",
+    backgroundSize: "24px 24px"
+  }}
+>
+  {/* Subtle instructions watermark behind images */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02]">
+    <span className="font-display font-extrabold text-[10vw] tracking-widest select-none uppercase">
+      HARSHIT
+    </span>
+  </div>
 
-          <AnimatePresence>
-            {images.map((image) => {
-              const isDragged = draggedId === image.id;
-              const hasLiked = likes[image.id];
+  {/* Table-like aligned grid container */}
+  <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 p-6 md:p-10">
+    <AnimatePresence>
+      {images.map((image) => {
+        const isDragged = draggedId === image.id;
+        const hasLiked = likes[image.id];
 
-              return (
-                <motion.div
-                  key={image.id}
-                  drag
-                  dragConstraints={canvasRef}
-                  dragElastic={0.12}
-                  dragMomentum={true}
-                  onDragStart={(e) => handleDragStart(e, image.id)}
-                  onDragEnd={(e) => handleDragEnd(e, image.id)}
-                  onPointerDown={(e) => handleDragStart(e, image.id)}
-                  onPointerUp={(e) => handleCardClick(image, e)}
-                  style={{
-                    position: "absolute",
-                    top: image.top,
-                    left: image.left,
-                    zIndex: isDragged ? 100 : image.zIndex,
-                    rotate: image.rotation,
-                    touchAction: "none"
-                  }}
-                  whileHover={{ 
-                    scale: 1.04, 
-                    rotate: 0,
-                    zIndex: 90,
-                    transition: { duration: 0.3, ease: "easeOut" }
-                  }}
-                  whileTap={{ 
-                    scale: 0.98,
-                    cursor: "grabbing",
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7)"
-                  }}
-                  animate={isResetting ? {
-                    top: image.top,
-                    left: image.left,
+        return (
+          <motion.div
+            key={image.id}
+            drag
+            dragConstraints={canvasRef}
+            dragElastic={0.12}
+            dragMomentum={true}
+            onDragStart={(e) => handleDragStart(e, image.id)}
+            onDragEnd={(e) => handleDragEnd(e, image.id)}
+            onPointerDown={(e) => handleDragStart(e, image.id)}
+            onPointerUp={(e) => handleCardClick(image, e)}
+            style={{
+              position: "relative",
+              top: "auto",
+              left: "auto",
+              zIndex: isDragged ? 100 : image.zIndex,
+              rotate: image.rotation,
+              touchAction: "none"
+            }}
+            whileHover={{
+              scale: 1.04,
+              rotate: 0,
+              zIndex: 90,
+              transition: { duration: 0.3, ease: "easeOut" }
+            }}
+            whileTap={{
+              scale: 0.98,
+              cursor: "grabbing",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7)"
+            }}
+            animate={
+              isResetting
+                ? {
                     rotate: image.rotation,
                     scale: 1,
-                    transition: { type: "spring", stiffness: 100, damping: 15 }
-                  } : {}}
-                  className={`cursor-grab group ${image.sizeClass} select-none`}
-                >
-                  {/* Polaroid/Mat Frame */}
-                  <div className="bg-[#090d1a]/95 border border-zinc-800/80 p-3 pb-8 md:p-4 md:pb-12 shadow-2xl rounded-sm backdrop-blur-sm transition-colors duration-300 group-hover:border-brand-accent/30 group-hover:bg-[#0d1527]">
-                    <div className={`relative ${image.aspect} overflow-hidden bg-zinc-950 rounded-sm mb-3 md:mb-4 border border-zinc-900`}>
-                      
-                      {/* Atmospheric low-saturation effect that goes colorful on hover */}
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className={`w-full h-full object-cover select-none pointer-events-none transition-all duration-700 ease-out ${
-                          isAtmosphericMode 
-                            ? "grayscale contrast-[1.05] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105" 
-                            : "group-hover:scale-105"
-                        }`}
-                        loading="lazy"
-                      />
-                      
-                      {/* Overlay gradient shadow */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                      
-                      {/* Heart & Maximize quick triggers */}
-                      <div className="absolute top-2.5 right-2.5 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
-                        <button
-                          onClick={(e) => handleLike(image.id, e)}
-                          className={`p-1.5 rounded-full backdrop-blur-md border text-xs transition-colors duration-200 ${
-                            hasLiked 
-                              ? "bg-brand-accent border-brand-accent text-white" 
-                              : "bg-black/50 border-white/10 text-white hover:bg-black/80"
-                          }`}
-                        >
-                          <Heart className={`w-3.5 h-3.5 ${hasLiked ? "fill-current text-white" : ""}`} />
-                        </button>
-                        <div className="p-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white">
-                          <Maximize2 className="w-3.5 h-3.5" />
-                        </div>
-                      </div>
-                    </div>
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
+                    }
+                  }
+                : {}
+            }
+            className={`cursor-grab group ${image.sizeClass} select-none w-full`}
+          >
+            {/* Polaroid/Mat Frame */}
+            <div className="bg-[#090d1a]/95 border border-zinc-800/80 p-3 pb-8 md:p-4 md:pb-12 shadow-2xl rounded-sm backdrop-blur-sm transition-colors duration-300 group-hover:border-brand-accent/30 group-hover:bg-[#0d1527]">
+              <div
+                className={`relative ${image.aspect} overflow-hidden bg-zinc-950 rounded-sm mb-3 md:mb-4 border border-zinc-900`}
+              >
+                {/* Atmospheric low-saturation effect that goes colorful on hover */}
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={`w-full h-full object-cover select-none pointer-events-none transition-all duration-700 ease-out ${
+                    isAtmosphericMode
+                      ? "grayscale contrast-[1.05] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105"
+                      : "group-hover:scale-105"
+                  }`}
+                  loading="lazy"
+                />
 
-                    {/* Handwritten Style Caption */}
-                    <div className="flex justify-between items-end px-0.5">
-                      <div className="flex flex-col">
-                        <span className="font-display italic text-xs tracking-wider text-zinc-300 group-hover:text-brand-accent transition-colors duration-200">
-                          {image.title}
-                        </span>
-                        <span className="text-[9px] uppercase tracking-widest text-zinc-500 mt-1 font-medium">
-                          {image.category}
-                        </span>
-                      </div>
-                      <span className="text-[9px] font-mono text-zinc-600">
-                        /{image.id.toString().padStart(2, "0")}
-                      </span>
-                    </div>
+                {/* Overlay gradient shadow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                {/* Heart & Maximize quick triggers */}
+                <div className="absolute top-2.5 right-2.5 flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-20">
+                  <button
+                    onClick={(e) => handleLike(image.id, e)}
+                    className={`p-1.5 rounded-full backdrop-blur-md border text-xs transition-colors duration-200 ${
+                      hasLiked
+                        ? "bg-brand-accent border-brand-accent text-white"
+                        : "bg-black/50 border-white/10 text-white hover:bg-black/80"
+                    }`}
+                  >
+                    <Heart
+                      className={`w-3.5 h-3.5 ${
+                        hasLiked ? "fill-current text-white" : ""
+                      }`}
+                    />
+                  </button>
+                  <div className="p-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white">
+                    <Maximize2 className="w-3.5 h-3.5" />
                   </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </section>
+                </div>
+              </div>
+
+              {/* Handwritten Style Caption */}
+              <div className="flex justify-between items-end px-0.5">
+                <div className="flex flex-col">
+                  <span className="font-display italic text-xs tracking-wider text-zinc-300 group-hover:text-brand-accent transition-colors duration-200">
+                    {image.title}
+                  </span>
+                  <span className="text-[9px] uppercase tracking-widest text-zinc-500 mt-1 font-medium">
+                    {image.category}
+                  </span>
+                </div>
+                <span className="text-[9px] font-mono text-zinc-600">
+                  /{image.id.toString().padStart(2, "0")}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        );
+      })}
+    </AnimatePresence>
+  </div>
+</section>
 
         {/* About Section */}
         <section id="about" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-zinc-900/60">
