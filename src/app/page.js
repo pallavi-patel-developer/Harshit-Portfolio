@@ -214,7 +214,7 @@ export default function Home() {
         });
         setShufflingId(null);
       }, 600); // 600ms matches the slide-out duration
-    }, 4500); // Shuffle every 4.5 seconds
+    }, 2000); // Shuffle every  2seconds
 
     return () => clearInterval(interval);
   }, [deck]);
