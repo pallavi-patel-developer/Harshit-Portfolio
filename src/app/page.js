@@ -519,7 +519,7 @@ export default function Home() {
           </div>
 
           {/* Table-like aligned grid container */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 p-6 md:p-10">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 p-6 md:p-10">
             <AnimatePresence>
               {images.map((image) => {
                 const isDragged = draggedId === image.id;
