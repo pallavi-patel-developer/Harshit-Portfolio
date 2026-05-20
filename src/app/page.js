@@ -34,7 +34,7 @@ const INITIAL_IMAGES = [
     title: "Heeramandi Coded",
     category: "Cinematic Showcase",
     year: "2026",
-    location: "Mumbai, Maharashtra, India",
+    location: "Jhansi, India",
     metadata: "RED V-Raptor • 50mm T1.5 Cine",
     description: "An elegant, richly textured cinematic production inspired by classic royal Indian aesthetics.",
     aspect: "aspect-[3/4]",
@@ -51,7 +51,7 @@ const INITIAL_IMAGES = [
     title: "Raag Festival",
     category: "Festival Cinematography",
     year: "2025",
-    location: "Udaipur, Rajasthan, India",
+    location: "Jhansi, India",
     metadata: "Sony A7IV • 85mm f/1.4 GM",
     description: "Romantic portraits framed against royal architecture and golden-hour light to celebrate the beginning of a lifelong journey.",
     aspect: "aspect-[3/4]",
@@ -68,7 +68,7 @@ const INITIAL_IMAGES = [
     title: "The Editorial Frame",
     category: "Fashion Campaign",
     year: "2025",
-    location: "Mumbai, Maharashtra, India",
+    location: "Jhansi, UttarPradesh, India",
     metadata: "ARRI Alexa Mini LF • Signature Primes",
     description: "A premium fashion editorial focused on texture, movement, and refined visual aesthetics.",
     aspect: "aspect-[3/4]",
@@ -85,7 +85,7 @@ const INITIAL_IMAGES = [
     title: "Crafted to Inspire",
     category: "Commercial Videography",
     year: "2026",
-    location: "Delhi, India",
+    location: "Jhansi, India",
     metadata: "Sony FX6 • Sigma Cine Lenses",
     description: "A cinematic brand film designed to showcase product craftsmanship and create a memorable customer experience.",
     aspect: "aspect-[3/4]",
@@ -102,7 +102,7 @@ const INITIAL_IMAGES = [
     title: "Echoes of the Himalayas",
     category: "Travel Documentary",
     year: "2025",
-    location: "Ladakh, India",
+    location: "Jhansi, India",
     metadata: "DJI Mavic 3 Pro • Sony FX3",
     description: "A visually immersive exploration of landscapes, culture, and spirituality in the mountains of northern India.",
     aspect: "aspect-[3/4]",
@@ -119,7 +119,7 @@ const INITIAL_IMAGES = [
     title: "Faces & Stories",
     category: "Portrait Cinematography",
     year: "2026",
-    location: "Prayagraj, Uttar Pradesh, India",
+    location: "Jhansi, Uttar Pradesh, India",
     metadata: "Sony A7SIII • 50mm f/1.2 GM",
     description: "Authentic cinematic portraiture that captures personality, expression, and genuine emotion.",
     aspect: "aspect-[3/4]",
@@ -550,7 +550,7 @@ export default function Home() {
                       if (video) {
                         video.muted = false;
                         video.volume = 0.3;
-                        video.play().catch(() => {});
+                        video.play().catch(() => { });
                       }
                     }}
                     onMouseLeave={(e) => {
