@@ -32,13 +32,13 @@ const INITIAL_IMAGES = [
     src: "/HEERAMANDI CODED.mp4",
     alt: "Heeramandi Coded",
     title: "Heeramandi Coded",
-    category: "",
-    year: "",
-    location: "",
-    metadata: "",
-    description: "",
+    category: "Cinematic Showcase",
+    year: "2026",
+    location: "Mumbai, Maharashtra, India",
+    metadata: "RED V-Raptor • 50mm T1.5 Cine",
+    description: "An elegant, richly textured cinematic production inspired by classic royal Indian aesthetics.",
     aspect: "aspect-[3/4]",
-    sizeClass: "w-72 md:w-80 lg:w-[26rem]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "8%",
     left: "5%",
     rotation: "-3deg",
@@ -47,15 +47,15 @@ const INITIAL_IMAGES = [
   {
     id: 2,
     src: "/INSTA.mp4",
-    alt: "RAAG FESTIVAL",
-    title: "RAAG FESTIVAL",
+    alt: "Raag Festival",
+    title: "Raag Festival",
     category: "Festival Cinematography",
-    year: "202  5",
+    year: "2025",
     location: "Udaipur, Rajasthan, India",
     metadata: "Sony A7IV • 85mm f/1.4 GM",
     description: "Romantic portraits framed against royal architecture and golden-hour light to celebrate the beginning of a lifelong journey.",
-    aspect: "aspect-[4/3]",
-    sizeClass: "w-80 md:w-[26rem] lg:w-[32rem]",
+    aspect: "aspect-[3/4]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "18%",
     left: "48%",
     rotation: "2deg",
@@ -63,16 +63,16 @@ const INITIAL_IMAGES = [
   },
   {
     id: 3,
-    src: "/image copy 2.png",
-    alt: "The Editorial Frame — Fashion Campaign",
+    src: "/Sequence 01_4.mp4",
+    alt: "The Editorial Frame",
     title: "The Editorial Frame",
-    category: "Fashion Photography",
+    category: "Fashion Campaign",
     year: "2025",
     location: "Mumbai, Maharashtra, India",
-    metadata: "Canon R5 • 70-200mm f/2.8L",
+    metadata: "ARRI Alexa Mini LF • Signature Primes",
     description: "A premium fashion editorial focused on texture, movement, and refined visual aesthetics.",
-    aspect: "aspect-[2/3]",
-    sizeClass: "w-64 md:w-72 lg:w-[22rem]",
+    aspect: "aspect-[3/4]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "58%",
     left: "10%",
     rotation: "4deg",
@@ -80,8 +80,8 @@ const INITIAL_IMAGES = [
   },
   {
     id: 4,
-    src: "/image copy 3.png",
-    alt: "Crafted to Inspire — Brand Commercial",
+    src: "/video1.mp4",
+    alt: "Crafted to Inspire",
     title: "Crafted to Inspire",
     category: "Commercial Videography",
     year: "2026",
@@ -89,7 +89,7 @@ const INITIAL_IMAGES = [
     metadata: "Sony FX6 • Sigma Cine Lenses",
     description: "A cinematic brand film designed to showcase product craftsmanship and create a memorable customer experience.",
     aspect: "aspect-[3/4]",
-    sizeClass: "w-52 md:w-60 lg:w-[18rem]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "54%",
     left: "70%",
     rotation: "-4deg",
@@ -97,16 +97,16 @@ const INITIAL_IMAGES = [
   },
   {
     id: 5,
-    src: "/image copy 4.png",
-    alt: "Echoes of the Himalayas — Travel Film",
+    src: "/video2.mp4",
+    alt: "Echoes of the Himalayas",
     title: "Echoes of the Himalayas",
-    category: "Travel Film",
+    category: "Travel Documentary",
     year: "2025",
     location: "Ladakh, India",
-    metadata: "DJI Mavic 4 Pro • Sony FX3",
+    metadata: "DJI Mavic 3 Pro • Sony FX3",
     description: "A visually immersive exploration of landscapes, culture, and spirituality in the mountains of northern India.",
-    aspect: "aspect-square",
-    sizeClass: "w-44 md:w-52 lg:w-[16rem]",
+    aspect: "aspect-[3/4]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "5%",
     left: "73%",
     rotation: "3deg",
@@ -114,84 +114,16 @@ const INITIAL_IMAGES = [
   },
   {
     id: 6,
-    src: "/giphy.gif",
-    alt: "Faces & Stories — Portrait",
+    src: "/video3.mp4",
+    alt: "Faces & Stories",
     title: "Faces & Stories",
-    category: "Portrait Photography",
+    category: "Portrait Cinematography",
     year: "2026",
     location: "Prayagraj, Uttar Pradesh, India",
-    metadata: "Sony A7IV • 50mm f/1.2 GM",
-    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
-    aspect: "aspect-square",
-    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
-    top: "76%",
-    left: "44%",
-    rotation: "-6deg",
-    zIndex: 15,
-  },
-  {
-    id: 6,
-    src: "/giphy.gif",
-    alt: "Faces & Stories — Portrait",
-    title: "Faces & Stories",
-    category: "Portrait Photography",
-    year: "2026",
-    location: "Prayagraj, Uttar Pradesh, India",
-    metadata: "Sony A7IV • 50mm f/1.2 GM",
-    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
-    aspect: "aspect-square",
-    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
-    top: "76%",
-    left: "44%",
-    rotation: "-6deg",
-    zIndex: 15,
-  },
-  {
-    id: 6,
-    src: "/giphy.gif",
-    alt: "Faces & Stories — Portrait",
-    title: "Faces & Stories",
-    category: "Portrait Photography",
-    year: "2026",
-    location: "Prayagraj, Uttar Pradesh, India",
-    metadata: "Sony A7IV • 50mm f/1.2 GM",
-    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
-    aspect: "aspect-square",
-    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
-    top: "76%",
-    left: "44%",
-    rotation: "-6deg",
-    zIndex: 15,
-  },
-  {
-    id: 6,
-    src: "/giphy.gif",
-    alt: "Faces & Stories — Portrait",
-    title: "Faces & Stories",
-    category: "Portrait Photography",
-    year: "2026",
-    location: "Prayagraj, Uttar Pradesh, India",
-    metadata: "Sony A7IV • 50mm f/1.2 GM",
-    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
-    aspect: "aspect-square",
-    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
-    top: "76%",
-    left: "44%",
-    rotation: "-6deg",
-    zIndex: 15,
-  },
-  {
-    id: 6,
-    src: "/giphy.gif",
-    alt: "Faces & Stories — Portrait",
-    title: "Faces & Stories",
-    category: "Portrait Photography",
-    year: "2026",
-    location: "Prayagraj, Uttar Pradesh, India",
-    metadata: "Sony A7IV • 50mm f/1.2 GM",
-    description: "Authentic portraiture that captures personality, confidence, and genuine emotion.",
-    aspect: "aspect-square",
-    sizeClass: "w-40 md:w-48 lg:w-[15rem]",
+    metadata: "Sony A7SIII • 50mm f/1.2 GM",
+    description: "Authentic cinematic portraiture that captures personality, expression, and genuine emotion.",
+    aspect: "aspect-[3/4]",
+    sizeClass: "w-80 md:w-96 lg:w-[28rem]",
     top: "76%",
     left: "44%",
     rotation: "-6deg",
@@ -613,6 +545,20 @@ export default function Home() {
                     onDragEnd={(e) => handleDragEnd(e, image.id)}
                     onPointerDown={(e) => handleDragStart(e, image.id)}
                     onPointerUp={(e) => handleCardClick(image, e)}
+                    onMouseEnter={(e) => {
+                      const video = e.currentTarget.querySelector("video");
+                      if (video) {
+                        video.muted = false;
+                        video.volume = 0.3;
+                        video.play().catch(() => {});
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const video = e.currentTarget.querySelector("video");
+                      if (video) {
+                        video.muted = true;
+                      }
+                    }}
                     style={{
                       position: "relative",
                       top: "auto",
@@ -653,14 +599,16 @@ export default function Home() {
                         className={`relative ${image.aspect} overflow-hidden bg-zinc-950 rounded-sm mb-3 md:mb-4 border border-zinc-900`}
                       >
                         {/* Atmospheric low-saturation effect that goes colorful on hover */}
-                        <img
+                        <video
                           src={image.src}
-                          alt={image.alt}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
                           className={`w-full h-full object-cover select-none pointer-events-none transition-all duration-700 ease-out ${isAtmosphericMode
                             ? "grayscale contrast-[1.05] brightness-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 group-hover:scale-105"
                             : "group-hover:scale-105"
                             }`}
-                          loading="lazy"
                         />
 
                         {/* Overlay gradient shadow */}
@@ -1145,9 +1093,12 @@ export default function Home() {
             >
               {/* Image Frame Panel */}
               <div className="lg:col-span-7 bg-black flex items-center justify-center p-4 min-h-[40vh] lg:min-h-0 relative overflow-hidden">
-                <img
+                <video
                   src={selectedImage.src}
-                  alt={selectedImage.alt}
+                  autoPlay
+                  controls
+                  loop
+                  playsInline
                   className="max-w-full max-h-[50vh] lg:max-h-[75vh] object-contain select-none shadow-2xl rounded-sm"
                 />
 
