@@ -946,7 +946,7 @@ export default function Home() {
             </div>
 
             {/* Interactive Form Column */}
-            <div className="lg:col-span-7 p-6 pr-400 md:p-8 bg-[#090d1a] border border-zinc-900 rounded-sm">
+            <div className="lg:col-span-7 p-6 md:p-8 bg-[#090d1a] border border-zinc-900 rounded-sm">
               <AnimatePresence mode="wait">
                 {formSubmitted ? (
                   <motion.div
