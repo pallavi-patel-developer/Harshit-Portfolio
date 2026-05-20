@@ -139,34 +139,12 @@ export default function Home() {
   const [draggedId, setDraggedId] = useState(null);
   const canvasRef = useRef(null);
 
-  // HARSHIT HERO CARD DECK SHOWCASE
-  const [deck, setDeck] = useState([
+  // HARSHIT HERO IMAGES SHOWCASE
+  const [deck] = useState([
     { id: 'h1', src: "/harshit1.png", alt: "Harshit Portrait 1", title: "THE VISION", subtitle: "CINEMATOGRAPHY" },
     { id: 'h2', src: "/harshit2.png", alt: "Harshit Portrait 2", title: "THE MOMENT", subtitle: "CREATIVE DIRECTING" },
     { id: 'h3', src: "/harshit3.png", alt: "Harshit Portrait 3", title: "THE FRAME", subtitle: "PHOTOGRAPHY" }
   ]);
-  const [shufflingId, setShufflingId] = useState(null);
-
-  // Auto-shuffle timer effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (deck.length === 0) return;
-      const topCard = deck[deck.length - 1];
-      setShufflingId(topCard.id);
-
-      setTimeout(() => {
-        setDeck(prevDeck => {
-          const newDeck = [...prevDeck];
-          const popped = newDeck.pop();
-          newDeck.unshift(popped);
-          return newDeck;
-        });
-        setShufflingId(null);
-      }, 600); // 600ms matches the slide-out duration
-    }, 4500); // Shuffle every 4.5 seconds
-
-    return () => clearInterval(interval);
-  }, [deck]);
 
   // Vibe toggle (purely visual for custom premium aesthetic)
   const [isAtmosphericMode, setIsAtmosphericMode] = useState(true);
@@ -333,119 +311,74 @@ export default function Home() {
       <main className="flex-grow">
 
         {/* Poetic Editorial Hero Section */}
-        <section className="pt-16 pb-10 px-6 md:px-12 max-w-7xl mx-auto z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 relative">
-          <div className="max-w-3xl">
-            <div className="flex items-center space-x-2 text-[10px] uppercase tracking-[0.3em] text-brand-accent font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
-              <span>India-Based Photographer & Filmmaker</span>
+        <section className="pt-16 pb-12 px-6 md:px-12 max-w-7xl mx-auto z-10 flex flex-col gap-12 md:gap-16 relative">
+          {/* Top Editorial Row: Headline & Specs */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 w-full">
+            <div className="max-w-3xl">
+              <div className="flex items-center space-x-2 text-[10px] uppercase tracking-[0.3em] text-brand-accent font-semibold mb-3">
+                <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
+                <span>India-Based Photographer & Filmmaker</span>
+              </div>
+
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] uppercase">
+                Capturing Stories <br />
+                <span className="text-outline transition-all duration-500 hover:text-brand-text">That Live Beyond Time</span>
+              </h1>
+
+              <p className="mt-6 text-sm md:text-base text-zinc-400 font-light leading-relaxed max-w-xl">
+                From weddings and pre-weddings to fashion films, travel documentaries, and brand campaigns, I create cinematic visuals that preserve emotions, culture, and authenticity in every frame.
+              </p>
+
+              <div className="pt-6 flex items-center space-x-4">
+                <a
+                  href="#canvas"
+                  className="px-6 py-3 bg-brand-accent hover:bg-white text-white hover:text-brand-bg text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
+                >
+                  View Portfolio
+                </a>
+                <a
+                  href="#contact"
+                  className="px-6 py-3 border border-zinc-800 hover:border-zinc-500 text-zinc-300 hover:text-white text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
+                >
+                  Book a Shoot
+                </a>
+              </div>
             </div>
 
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] uppercase">
-              Capturing Stories <br />
-              <span className="text-outline transition-all duration-500 hover:text-brand-text">That Live Beyond Time</span>
-            </h1>
-
-            <p className="mt-6 text-sm md:text-base text-zinc-400 font-light leading-relaxed max-w-xl">
-              From weddings and pre-weddings to fashion films, travel documentaries, and brand campaigns, I create cinematic visuals that preserve emotions, culture, and authenticity in every frame.
-            </p>
-
-            <div className="pt-6 flex items-center space-x-4">
-              <a
-                href="#canvas"
-                className="px-6 py-3 bg-brand-accent hover:bg-white text-white hover:text-brand-bg text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
-              >
-                View Portfolio
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3 border border-zinc-800 hover:border-zinc-500 text-zinc-300 hover:text-white text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-sm"
-              >
-                Book a Shoot
-              </a>
+            <div className="flex flex-col items-start md:items-end text-left md:text-right text-xs text-zinc-500 space-y-2 border-l md:border-l-0 md:border-r border-zinc-800/80 pl-4 md:pl-0 md:pr-4">
+              <span className="font-semibold text-brand-accent uppercase tracking-widest">Photography • Cinematography • Editing</span>
+              <span>Available Across India & Worldwide</span>
+              <span className="font-display italic text-zinc-600">Visual Storyteller</span>
             </div>
           </div>
 
-          <div className="flex flex-col items-start md:items-end text-left md:text-right text-xs text-zinc-500 space-y-2 border-l md:border-l-0 md:border-r border-zinc-800/80 pl-4 md:pl-0 md:pr-4">
-            <span className="font-semibold text-brand-accent uppercase tracking-widest">Photography • Cinematography • Editing</span>
-            <span>Available Across India & Worldwide</span>
-            <span className="font-display italic text-zinc-600">Visual Storyteller</span>
-          </div>
-
-          {/* HARSHIT CARD DECK */}
-          <div className="relative block w-[280px] sm:w-[320px] h-[390px] sm:h-[450px] flex-shrink-0 z-10 mx-auto lg:mx-0 lg:mr-12 mt-12 lg:mt-0 select-none overflow-visible">
-            <AnimatePresence mode="popLayout">
+          {/* HARSHIT IMAGES ROW */}
+          <div className="relative w-full z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full select-none overflow-visible">
               {deck.map((card, i) => {
-                const isShuffling = shufflingId === card.id;
-
-                // Position calculations based on array index (stack position)
-                // index 0: bottom of stack, index 1: middle, index 2: top
-                let xOffset = 0;
-                let yOffset = 0;
-                let rotateDeg = 0;
-                let scaleVal = 1;
-                let zIndexVal = i * 10;
-
-                if (i === 0) {
-                  xOffset = isMobile ? -14 : -22;
-                  yOffset = isMobile ? 12 : 18;
-                  rotateDeg = -8;
-                  scaleVal = 0.92;
-                } else if (i === 1) {
-                  xOffset = isMobile ? 8 : 12;
-                  yOffset = isMobile ? -6 : -8;
-                  rotateDeg = 4;
-                  scaleVal = 0.96;
-                } else if (i === 2) {
-                  xOffset = 0;
-                  yOffset = 0;
-                  rotateDeg = -2;
-                  scaleVal = 1;
-                }
-
-                // If the card is the top one shuffling out, animate it sliding away
-                const animateProps = isShuffling
-                  ? {
-                    x: isMobile ? 170 : 290, // Slide out less on mobile to prevent clipping
-                    y: isMobile ? -55 : -25, // Slide up more on mobile to give a neat arc
-                    rotate: isMobile ? 12 : 18,
-                    scale: 1.04,
-                    zIndex: 40,
-                  }
-                  : {
-                    x: xOffset,
-                    y: yOffset,
-                    rotate: rotateDeg,
-                    scale: scaleVal,
-                    zIndex: zIndexVal,
-                  };
+                // Elegant subtle rotations to keep the moodboard/scattered artistic vibe alive
+                const rotateDeg = i === 0 ? -2 : i === 1 ? 1 : -1.5;
 
                 return (
                   <motion.div
                     key={card.id}
-                    animate={animateProps}
+                    initial={{ opacity: 0, y: 30, rotate: rotateDeg }}
+                    animate={{ opacity: 1, y: 0, rotate: rotateDeg }}
+                    whileHover={{
+                      y: -8,
+                      scale: 1.03,
+                      rotate: 0,
+                      zIndex: 20,
+                      transition: { duration: 0.3, ease: "easeOut" }
+                    }}
                     transition={{
                       type: "spring",
-                      stiffness: 110,
-                      damping: 18,
-                      mass: 1
+                      stiffness: 100,
+                      damping: 16,
+                      delay: i * 0.15
                     }}
-                    className="absolute top-0 left-0 w-[260px] sm:w-[290px] cursor-pointer"
+                    className="relative w-full cursor-pointer"
                     style={{ transformOrigin: "center bottom" }}
-                    onClick={() => {
-                      // Manual shuffle trigger on click! This makes it extremely interactive.
-                      if (!shufflingId && i === deck.length - 1) {
-                        setShufflingId(card.id);
-                        setTimeout(() => {
-                          setDeck(prevDeck => {
-                            const newDeck = [...prevDeck];
-                            const popped = newDeck.pop();
-                            newDeck.unshift(popped);
-                            return newDeck;
-                          });
-                          setShufflingId(null);
-                        }, 600);
-                      }
-                    }}
                   >
                     {/* Polaroid Frame */}
                     <div className="bg-[#090d1a]/95 border border-zinc-800/80 p-3.5 pb-9 shadow-2xl rounded-sm backdrop-blur-sm transition-all duration-300 hover:border-brand-accent/40 hover:bg-[#0d1527] group">
@@ -476,17 +409,17 @@ export default function Home() {
                           </span>
                         </div>
                         <span className="text-[8.5px] font-mono text-zinc-600 group-hover:text-brand-accent/50 transition-colors duration-200">
-                          0{3 - i} / 03
+                          0{i + 1} / 03
                         </span>
                       </div>
                     </div>
                   </motion.div>
                 );
               })}
-            </AnimatePresence>
+            </div>
 
-            {/* Decorative Ambient Glow */}
-            <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-accent/15 blur-3xl rounded-full pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
+            {/* Decorative Ambient Glow behind grid */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-accent/10 blur-3xl rounded-full pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '8s' }} />
           </div>
         </section>
 
