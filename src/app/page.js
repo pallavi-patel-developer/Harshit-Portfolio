@@ -492,22 +492,13 @@ export default function Home() {
 
 
         {/* Gallery Control Bar */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex flex-wrap justify-between items-center border-t border-zinc-900 gap-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex justify-center items-center border-t border-zinc-900">
           <div className="flex items-center space-x-3 text-xs text-zinc-500">
-            <Move className="w-3.5 h-3.5 text-brand-accent animate-bounce" />
-            <span className="uppercase tracking-[0.15em] font-medium">
-              Drag frames to rearrange your moodboard • Click to expand cinematic details
+            <Sparkles className="w-3.5 h-3.5 text-brand-accent animate-pulse" />
+            <span className="uppercase tracking-[0.15em] font-medium text-center">
+              Hover to play audio • Click to expand cinematic details
             </span>
           </div>
-
-          <button
-            onClick={handleResetCanvas}
-            disabled={isResetting}
-            className="flex items-center space-x-2 px-4 py-2 border border-zinc-800 hover:border-zinc-500 rounded-sm text-xs uppercase tracking-wider text-zinc-400 hover:text-brand-text transition-all duration-200 active:scale-95 disabled:opacity-50 group"
-          >
-            <Undo2 className={`w-3.5 h-3.5 group-hover:rotate-[-45deg] transition-transform duration-300 ${isResetting ? "animate-spin" : ""}`} />
-            <span>Reset Moodboard</span>
-          </button>
         </div>
 
         {/* The Interactive Scattered Moodboard Canvas */}
@@ -537,14 +528,7 @@ export default function Home() {
                 return (
                   <motion.div
                     key={image.id}
-                    drag
-                    dragConstraints={canvasRef}
-                    dragElastic={0.12}
-                    dragMomentum={true}
-                    onDragStart={(e) => handleDragStart(e, image.id)}
-                    onDragEnd={(e) => handleDragEnd(e, image.id)}
-                    onPointerDown={(e) => handleDragStart(e, image.id)}
-                    onPointerUp={(e) => handleCardClick(image, e)}
+                    onClick={() => setSelectedImage(image)}
                     onMouseEnter={(e) => {
                       const video = e.currentTarget.querySelector("video");
                       if (video) {
@@ -563,9 +547,9 @@ export default function Home() {
                       position: "relative",
                       top: "auto",
                       left: "auto",
-                      zIndex: isDragged ? 100 : image.zIndex,
+                      zIndex: image.zIndex,
                       rotate: image.rotation,
-                      touchAction: "none"
+                      touchAction: "auto"
                     }}
                     whileHover={{
                       scale: 1.04,
@@ -574,24 +558,9 @@ export default function Home() {
                       transition: { duration: 0.3, ease: "easeOut" }
                     }}
                     whileTap={{
-                      scale: 0.98,
-                      cursor: "grabbing",
-                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7)"
+                      scale: 0.98
                     }}
-                    animate={
-                      isResetting
-                        ? {
-                          rotate: image.rotation,
-                          scale: 1,
-                          transition: {
-                            type: "spring",
-                            stiffness: 100,
-                            damping: 15
-                          }
-                        }
-                        : {}
-                    }
-                    className={`cursor-grab group ${image.sizeClass} select-none w-full`}
+                    className={`cursor-pointer group ${image.sizeClass} select-none w-full`}
                   >
                     {/* Polaroid/Mat Frame */}
                     <div className="bg-[#090d1a]/95 border border-zinc-800/80 p-3 pb-8 md:p-4 md:pb-12 shadow-2xl rounded-sm backdrop-blur-sm transition-colors duration-300 group-hover:border-brand-accent/30 group-hover:bg-[#0d1527]">
