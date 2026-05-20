@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large unused video assets to prevent GitHub limit issues
+/public/final.mp4
+/public/Harry VIRAL VERY VIRAL AD.mp4
+/public/himanshu.mp4
+/public/Teaser.mp4
