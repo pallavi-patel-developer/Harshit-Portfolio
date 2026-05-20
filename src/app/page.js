@@ -312,7 +312,7 @@ export default function Home() {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "7a26f049-d476-47b5-8c2a-b76be8ef1ce3",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -759,10 +759,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               {[
-                { number: "150+", label: "Projects Completed", icon: CheckCircle },
-                { number: "80+", label: "Happy Clients", icon: Users },
-                { number: "20+", label: "Cities Covered", icon: Globe },
-                { number: "5+", label: "Years of Experience", icon: Award }
+                { number: "70+", label: "Projects Completed", icon: CheckCircle },
+                { number: "45+", label: "Happy Clients", icon: Users },
+                { number: "5+", label: "Cities Covered", icon: Globe },
+                { number: "8+", label: "Years of Experience", icon: Award }
               ].map((stat, idx) => {
                 const StatIcon = stat.icon;
                 return (
@@ -961,15 +961,15 @@ export default function Home() {
               <div className="space-y-4 text-xs font-mono text-zinc-400">
                 <div className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4 text-brand-accent" />
-                  <span>Prayagraj, Uttar Pradesh, India</span>
+                  <span>Jhansi, Uttar Pradesh, India</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Camera className="w-4 h-4 text-brand-accent" />
-                  <a href="mailto:hello@harshitsharma.in" className="hover:text-brand-accent transition-colors">hello@harshitsharma.in</a>
+                  <a href="mailto:starboyjerryworld@gmail.com" className="hover:text-brand-accent transition-colors">starboyjerryworld@gmail.com</a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Film className="w-4 h-4 text-brand-accent" />
-                  <span>+91 XXXXX XXXXX</span>
+                  <span>+91 9956283853</span>
                 </div>
               </div>
             </div>
@@ -987,7 +987,7 @@ export default function Home() {
                     <CheckCircle className="w-12 h-12 text-brand-accent animate-bounce" />
                     <h3 className="font-display text-lg font-bold uppercase tracking-widest text-white">Inquiry Received</h3>
                     <p className="text-xs text-zinc-400 max-w-sm font-light leading-relaxed">
-                      Thank you for reaching out. Harshit Sharma will review your requirements and connect with you shortly via phone/email.
+                      Thank you for reaching out. I will review your requirements and connect with you shortly via phone/email.
                     </p>
                   </motion.div>
                 ) : (
